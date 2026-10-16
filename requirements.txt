@@ -1,0 +1,8 @@
+streamlit
+requests
+trafilatura
+sentence-transformers
+transformers
+torch
+pypdf
+tldextract
