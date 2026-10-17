@@ -1,7 +1,7 @@
 import streamlit as st
 import clarity_ai_v33 as ai
 
-# Page configuration without any icon
+# Page configuration
 st.set_page_config(page_title="Clarity AI")
 
 st.title("CLARITY AI")
@@ -33,7 +33,6 @@ if st.button("Check Statement"):
             
             status = result.get("result", "UNKNOWN")
             
-            # Simple text-based output without any icons
             if status == "SUPPORTED":
                 st.write("Result: SUPPORTED")
                 st.write("This statement is true.")
@@ -44,7 +43,6 @@ if st.button("Check Statement"):
                 st.write("Result: NEEDS REVIEW")
                 st.write("Not enough evidence to confirm.")
 
-            # Displaying evidence as plain text
             st.write("### Evidence:")
             evidences = result.get("supporting_evidence", [])
             if evidences:
@@ -54,3 +52,8 @@ if st.button("Check Statement"):
                 st.write("No strong evidence found.")
     else:
         st.write("Please type a statement first.")
+
+# --- Part 3: Feedback Form Link ---
+st.write("---")
+st.write("### User Feedback")
+st.markdown("[Click here to give your feedback](https://docs.google.com/forms/d/e/1FAIpQLSe87wEQIgChoc_5BNHEZe_JqfJlOEKT7vGz18P6kypDtMgTlQ/viewform?usp=header)")
